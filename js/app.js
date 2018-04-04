@@ -1,27 +1,25 @@
 $(document).ready(function() {
-    const hamburger = $('#hamburger');
-    const responsiveMenu = $('.responsive-menu');
-    const menuLinks = $('.scrolling-link');
-    const prevArrow = $('.quote-prev');
-    const nextArrow = $('.quote-next');
+    var hamburger = $('#hamburger');
+    var responsiveMenu = $('.responsive-menu');
+    var menuLinks = $('.scrolling-link');
+    var prevArrow = $('.quote-prev');
+    var nextArrow = $('.quote-next');
     let currentSlide = 1;
-    const maxSlide = $('.quote-details').length +1;
-    const respLink = $('.responsive-link');
+    var maxSlide = $('.quote-details').length +1;
+    var respLink = $('.responsive-link');
+    var form = $('form');
 
     hamburger.on('click', function() {
         responsiveMenu.toggle('slow');
     });
 
-
     menuLinks.on('click', function(e){
         e.preventDefault();
         var href = $(this).attr('href');
         var offset = $(href).offset().top;
-        
             $('html, body').animate({
                 scrollTop: offset 
-            }, 1500);
-            
+            }, 1500);        
     });
     
     respLink.on('click', function(e) {
